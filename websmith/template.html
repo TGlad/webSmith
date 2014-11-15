@@ -1,0 +1,163 @@
+<html>
+<head>
+	<script src="codemirror/js/codemirror.js" type="text/javascript"></script>
+</head>
+<body style="background-color:rgb(66,85,102);">
+<h1>[objectFile]</h1>
+<form name="edit" action="[objectFile].obj" method="get">
+<!--edit-->
+</form>
+<form action="saveChanges" method="get">
+<table style="WIDTH: 80%; margin-left: auto; margin-right: auto;">
+<tr>
+  <td>
+<!--description-->[description]<!--/description-->
+  </td>
+  <td style="text-align:right">
+<address>
+Written by Tom Lowe<br />
+<a href="mailto:us@example.org">Email us</a><br/>
+Last change date: 19/2/10<br/>
+Wiki: <a href="[wikilink]">[wikilink]</a>
+</address>
+  </td>
+  <td>
+<fieldset>
+<legend>Legend</legend>
+<div style="color: rgb(211,133,0)"><abbr title="in, down, out, backIn, up, backOut, topState, baseState">Interfaces</abbr></div>
+<div style="color: rgb(180,10,42)"><abbr title="Position, Velocity, Acceleration, Jerk, Force, Impulse, Momentum, AngularVelocity, AngularAcceleration, AngularMomentum, Torque, TorqueImpulse, Length, Angle, Multiplier, TimePeriod, Mass, InverseMass, Inertia, InverseInertia, Area, Value, Direction, Frequency, Scale, Orientation">Dimensions</abbr></div>
+<div style="color: rgb(166,0,95)"><abbr title="metres, kilometres, centimetres, millimetres, miles, milliseconds, seconds, minutes, hours, days, weeks, years, radians, degrees, grams, kilograms, tonnes">Units</abbr></div>
+<div style="color: rgb(166,0,166)"><abbr title="mph, kph, kg, newtons, litres, millilitres, hertz, cm">Derived units</abbr></div>
+<div style="color: rgb(124,54,5)"><abbr title="Vector3, Quaternion, Transform">Standard objects</abbr></div>
+<div style="color: rgb(20,128,16)"><abbr title="boolean: and or not == != basic: + - / * ^ += -= *= /= objects: .+  .-  .*  ./  .+=  .-=  .*=  ./=  ^">Operators</abbr></div>
+</fieldset>
+  </td>
+</table>
+<table cellspacing=0 cellpadding=0 style="WIDTH: 80%; margin-left: auto; margin-right: auto;">
+<tr>
+  <td colspan="5" style="text-align:center;">
+initialise<br>
+<div style="border: 1px solid black; background-color:white;">
+<textarea readonly id="ta_init" style="WIDTH: 100%" name="init" rows=5>[init]</textarea></div>
+</td>
+</tr>
+<tr>
+  <td colspan="2" style="text-align:center;vertical-align:bottom"><font size="8">&dArr;</font></td>
+  <td></td>
+  <td colspan="2" style="text-align:center;vertical-align:bottom"><font size="8">&uArr;</font></td>
+</tr>
+<tr>
+  <td colspan="2" style="text-align:center;border:1px solid blue;">in</td>
+  <td colspan="1" style="text-align:center;border:1px solid blue;">top state</td>
+  <td colspan="2" style="text-align:center;border:1px solid blue;">backOut</td>
+</tr>
+</table>
+<table cellspacing=0 cellpadding=0 style="WIDTH: 80%; margin-left: auto; margin-right: auto;">
+<tr>
+  <td colspan="1" style="text-align:center">
+receive<br>
+<div style="border: 1px solid black; background-color:white;">
+<textarea readonly id="ta_receive" style="WIDTH: 100%" name="receive" rows=10>[receive]</textarea></div>
+  </td>
+  <td colspan="1" style="text-align:center">
+reply<br>
+<div style="border: 1px solid black; background-color:white;">
+<textarea readonly id="ta_reply" style="WIDTH: 100%" name="reply" rows=10>[reply]</textarea></div>
+  </td>
+</tr>
+<tr>
+  <td style="text-align:center;border:1px solid blue;">down</td>
+  <td style="text-align:center;border:1px solid blue;">up</td>
+</tr>
+</table>
+<table cellspacing=0 cellpadding=0 style="WIDTH: 80%; margin-left: auto; margin-right: auto;">
+<tr>
+  <td rowspan="2" style="text-align:center"><font size="40">&darr;</font></td>
+  <td colspan="3" style="text-align:center">
+predict<br>
+<div style="border: 1px solid black; background-color:white;">
+<textarea readonly id="ta_predict" style="WIDTH: 100%" name="predict" rows=10>[predict]</textarea></div>
+  </td>
+  <td rowspan="2" style="text-align:center"><font size="40">&uarr;</font></td>
+</tr>
+<tr>
+  <td colspan="3" style="text-align:center">
+react<br>
+<div style="border: 1px solid black; background-color:white;">
+<textarea readonly id="ta_react" style="WIDTH: 100%" name="react" rows=10>[react]</textarea></div>
+  </td>
+</tr>
+</table>
+<table cellspacing=0 cellpadding=0 style="WIDTH: 80%; margin-left: auto; margin-right: auto;">
+<tr>
+  <td style="text-align:center;border:1px solid blue;">down</td>
+  <td style="text-align:center;border:1px solid blue;">up</td>
+</tr>
+<tr>
+  <td colspan="1" style="text-align:center">
+generate<br>
+<div style="border: 1px solid black; background-color:white;">
+<textarea readonly id="ta_generate" name="generate" style="WIDTH: 100%" rows=10>[generate]</textarea></div>
+  </td>
+  <td colspan="1" style="text-align:center">
+analyse<br>
+<div style="border: 1px solid black; background-color:white;">
+<textarea readonly id="ta_analyse" style="WIDTH: 100%" name="analyse" rows=10>[analyse]</textarea></div>
+  </td>
+</tr>
+</table>
+<table cellspacing=0 cellpadding=0 style="WIDTH: 80%; margin-left: auto; margin-right: auto;">
+<tr>
+  <td colspan="2" style="text-align:center;border:1px solid blue;">out</td>
+  <td colspan="1" style="text-align:center;border:1px solid blue;">base state</td>
+  <td colspan="2" style="text-align:center;border:1px solid blue;">backIn</td>
+</tr>
+<tr>
+  <td colspan="2" style="text-align:center;vertical-align:top"><font size="8">&dArr;</font></td>
+  <td></td>
+  <td colspan="2" style="text-align:center;vertical-align:top"><font size="8">&uArr;</font></td>
+</tr>
+</table>
+<p><!--save button-->
+</form>
+	<script language="Javascript" type="text/javascript">
+    var textarea;
+    function Config(value)
+    { 
+      return {
+        height: "350px",
+        width: "100%",
+        parserfile: ["tokeniseneutral.js", "parseneutral.js"],
+        stylesheet: "codemirror/css/neutralcolors.css",
+        content: value,
+        path: "codemirror/js/",
+        autoMatchParens: true,
+        textWrapping: false,
+        tabMode: "shift",
+        initCallback: function(editor){}
+      }
+    }
+    textarea = document.getElementById('ta_init');
+    var config1 = new Config(textarea.value);
+    var editor1 = CodeMirror.fromTextArea(textarea, config1);
+    textarea = document.getElementById('ta_receive');
+    var config2 = new Config(textarea.value);
+    var editor2 = CodeMirror.fromTextArea(textarea, config2);
+    textarea = document.getElementById('ta_predict');
+    var config3 = new Config(textarea.value);
+    var editor3 = CodeMirror.fromTextArea(textarea, config3);
+    textarea = document.getElementById('ta_reply');
+    var config4 = new Config(textarea.value);
+    var editor4 = CodeMirror.fromTextArea(textarea, config4);
+    textarea = document.getElementById('ta_analyse');
+    var config5 = new Config(textarea.value);
+    var editor5 = CodeMirror.fromTextArea(textarea, config5);
+    textarea = document.getElementById('ta_react');
+    var config6 = new Config(textarea.value);
+    var editor6 = CodeMirror.fromTextArea(textarea, config6);
+    textarea = document.getElementById('ta_generate');
+    var config7 = new Config(textarea.value);
+    var editor7 = CodeMirror.fromTextArea(textarea, config7);
+  </script>
+</body>
+</html>
